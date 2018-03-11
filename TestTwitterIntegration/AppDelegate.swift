@@ -8,7 +8,10 @@
 
 import UIKit
 import CoreData
-
+import Firebase
+import TwitterCore
+import TwitterKit
+import Fabric
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Twitter.sharedInstance().start(withConsumerKey: "IsEuyDxXwOgUS8a0mNDhtbTY8", consumerSecret: "Fjn9Wlk1ncW94x2Ytny0VosCblLlTepdWirKZZDB1v4ySGjOkU")
+        
+        Fabric.with([Twitter.self])
+        
+         FirebaseApp.configure()
         return true
     }
 

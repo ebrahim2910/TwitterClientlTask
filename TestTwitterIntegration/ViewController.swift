@@ -18,8 +18,8 @@ import TwitterKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var toProfile: UIButton!
     
-   // var teamArray = [Teams]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +52,15 @@ class ViewController: UIViewController {
             // User is signed in.
             // ...
             print("ok move to another page")
+            toProfile.isHidden = false
             
      performSegue(withIdentifier: "toFollowers", sender: self)
             
         } else {
             // No user is signed in.
             // ...
-            
+            toProfile.isHidden = true
+
             let buttonLogin = TWTRLogInButton(logInCompletion : {  session , error in
                 
                 

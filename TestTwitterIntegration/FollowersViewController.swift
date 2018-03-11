@@ -20,7 +20,7 @@ var myIndex = 0
 class FollowersViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
 
     
-    @IBOutlet weak var profileImage: UIImageView!
+  
     
     
     @IBOutlet weak var profileName: UILabel!
@@ -33,16 +33,11 @@ class FollowersViewController: UIViewController , UITableViewDelegate , UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
  
 
         // Do any additional setup after loading the view.
-        
-//        if let url = NSURL(string:(UserDefaults.standard.object(forKey: "photoURL") as! String)!) {
-//            if let data = NSData(contentsOf: url as URL) {
-//                self.profileImage.image = UIImage(data: data as Data)
-//            }
-//        }
+      
         
         profileName.text = UserDefaults.standard.object(forKey: "name") as! String!
     }
@@ -61,7 +56,7 @@ class FollowersViewController: UIViewController , UITableViewDelegate , UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FollowersCustomCell
         
         cell.bio.text! = bioArray[indexPath.row]
-         cell.bio?.numberOfLines = 0
+         //cell.bio?.numberOfLines = 0
         cell.followerName.text! = followerName[indexPath.row]
 
         cell.followerImage.image = followerImage[indexPath.row]
